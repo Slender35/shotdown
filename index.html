@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>Secure Website</title>
+</head>
+<body>
+<h1>Welcome to the Secure Website</h1>
+<p>Please enter the password to continue:</p>
+<form onsubmit="return checkPassword()">
+<input type="password" id="password">
+<input type="submit" value="Submit">
+</form>
+<script>
+function checkPassword() {
+  var correctPassword = "password123";
+  var password = document.getElementById("password").value;
+  if (password == correctPassword) {
+    alert("Access granted. Welcome to the secure website.");
+    return true;
+  } else {
+    alert("Incorrect password. Shutting down computer now.");
+    window.open('about:blank', '_self').close();
+    return false;
+  }
+}
+</script>
+</body>
+</html>
